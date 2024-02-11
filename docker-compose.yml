@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  database_see:
+    image: postgres
+    container_name: database_see
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=see_gerador_documentacao
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app:
+    build: .
+    container_name: gerador-de-documentacao-see
+    volumes:
+      - .:/usr/app
+    network_mode: host
+
+
+volumes:
+  pgdata:
+    driver: local

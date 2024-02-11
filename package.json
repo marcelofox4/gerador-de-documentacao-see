@@ -1,0 +1,26 @@
+{
+  "name": "gerador-de-documentacao-see",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:marcelofox4/gerador-de-documentacao-see.git",
+  "author": "marcelofox4 <marcelofox4@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.8",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.2.1",
+    "swagger-ui-express": "^5.0.0",
+    "typeorm": "0.2.31",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/swagger-ui-express": "^4.1.6",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}

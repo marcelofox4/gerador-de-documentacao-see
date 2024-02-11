@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "port": 5432,
+    "host": "localhost",
+    "username": "admin",
+    "password": "admin",
+    "database": "see_gerador_documentacao",
+    "migrations": ["./src/shared/database/migrations/*.ts"],
+    "cli": {
+        "migrationsDir": "./src/shared/database/migrations"
+    },
+    "entities": []
+}
