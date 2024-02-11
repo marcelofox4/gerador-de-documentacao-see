@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Gerador de Documentação Automática da SEE",
+        "description": "Projeto de desenvolvimento de uma API para cadastrar Projetos Patrocínios de Atletas e gerar a documentação, automaticamente, da Secretaria Especial de Esportes do município de Ipojuca",
+        "version": "1.0.0",
+        "contact": {
+            "email": "marceloraposo.dev@gmail.com"
+        }
+    }
+}
