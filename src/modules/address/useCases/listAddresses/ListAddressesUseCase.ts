@@ -3,7 +3,7 @@ import { IAddressRepository } from "../../repositories/interfaces/IAddressReposi
 import { Address } from "../../entities/Address";
 
 @injectable()
-class ListAdressesUseCase {
+class ListAddressesUseCase {
 
     constructor(
         @inject("AddressRepository")
@@ -19,4 +19,4 @@ class ListAdressesUseCase {
 
 }
 
-export { ListAdressesUseCase };
+export { ListAddressesUseCase };

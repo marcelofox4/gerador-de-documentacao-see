@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { ListAdressesUseCase } from "./ListAdressesUseCase";
+import { ListAddressesUseCase } from "./ListAddressesUseCase";
 
-class ListAdressesController {
+class ListAddressesController {
 
     async handle(request: Request, response: Response): Promise<Response> {
 
-        const listAdressesUseCase = container.resolve(ListAdressesUseCase);
+        const listAdressesUseCase = container.resolve(ListAddressesUseCase);
 
         try {
             const adresses = await listAdressesUseCase.execute();
@@ -18,4 +18,4 @@ class ListAdressesController {
     }
 }
 
-export { ListAdressesController };
+export { ListAddressesController };

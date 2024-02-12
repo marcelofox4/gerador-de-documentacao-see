@@ -1,17 +1,17 @@
 import { AddressRepositoryInMemory } from "../../repositories/in-memory/AddressRepositoryInMemory"
-import { ListAdressesUseCase } from "./ListAdressesUseCase";
+import { ListAddressesUseCase } from "./ListAddressesUseCase";
 
 let addressRepositoryInMemory: AddressRepositoryInMemory;
-let listAdressesUseCase: ListAdressesUseCase;
+let listAddressesUseCase: ListAddressesUseCase;
 
-describe("List Adresses", () => {
+describe("List Addresses", () => {
 
     beforeEach(() => {
         addressRepositoryInMemory = new AddressRepositoryInMemory();
-        listAdressesUseCase = new ListAdressesUseCase(addressRepositoryInMemory);
+        listAddressesUseCase = new ListAddressesUseCase(addressRepositoryInMemory);
     });
 
-    it("should be able to list all adresses", async () => {
+    it("should be able to list all addresses", async () => {
 
         const address = await addressRepositoryInMemory.create({
             street: "Rua teste",
@@ -21,7 +21,7 @@ describe("List Adresses", () => {
             cep: "55590000",
         });
 
-        const adresses = await addressRepositoryInMemory.list();
+        const adresses = await listAddressesUseCase.execute();
 
         expect(adresses).toEqual([address]);
     });

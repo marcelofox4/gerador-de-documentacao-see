@@ -1,11 +1,89 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Gerador de Documentação Automática da SEE",
-        "description": "Projeto de desenvolvimento de uma API para cadastrar Projetos Patrocínios de Atletas e gerar a documentação, automaticamente, da Secretaria Especial de Esportes do município de Ipojuca",
+        "title": "SEE Automatic Documentation Generator",
+        "description": "Project to develop an API to register Athlete Sponsorship Projects and automatically generate documentation from the Special Secretariat for Sports of the municipality of Ipojuca",
         "version": "1.0.0",
         "contact": {
             "email": "marceloraposo.dev@gmail.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3333",
+            "description": "Test API"
+        }
+    ],
+    "paths":{
+        "/address/": {
+            "post": {
+                "tags": ["Address"],
+                "summary": "Create Address",
+                "description": "It should be possible to register an Address.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "street": "Rua de teste",
+                                "number": 100,
+                                "city": "Cidade de teste",
+                                "state": "Pernambuco",
+                                "cep": "55590000"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Address created!"
+                    },
+                    "400": {}
+                }
+            },
+            "get": {
+                "tags": ["Address"],
+                "summary": "List Addresses",
+                "description": "It should be possible to list all registered addresses.",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {}
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "street": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "number"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "cep": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "Date"
+                    },
+                    "updated_at": {
+                        "type": "Date"
+                    }
+                }
+            }
         }
     }
 }
