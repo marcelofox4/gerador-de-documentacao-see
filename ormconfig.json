@@ -9,5 +9,7 @@
     "cli": {
         "migrationsDir": "./src/shared/database/migrations"
     },
-    "entities": []
+    "entities": [
+        "./src/modules/address/entities/**/*{.ts,.js}"
+    ]
 }
