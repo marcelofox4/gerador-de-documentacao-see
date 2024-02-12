@@ -5,8 +5,10 @@ import  { createConnection }  from "typeorm";
 import swaggerUi from "swagger-ui-express";
 import swaggerFile from "./swagger.json";
 
+import "./shared/container";
 import { AppError } from "./shared/errors/AppError";
 import "express-async-errors";
+import { router } from "./shared/routes";
 
 createConnection();
 
@@ -14,7 +16,11 @@ const app = express();
 const port = 3333;
 
 app.use(express.json());
+
+app.use(router);
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof AppError) {
         return response.status(err.statusCode).json({

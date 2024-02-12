@@ -17,6 +17,10 @@ export class CreateTableAddress1707694852084 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "number",
+                        type: "numeric"
+                    },
+                    {
                         name: "city",
                         type: "varchar",
                     },

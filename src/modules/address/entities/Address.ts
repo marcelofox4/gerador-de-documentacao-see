@@ -11,6 +11,9 @@ class Address {
     street: string;
 
     @Column()
+    number?: number;
+
+    @Column()
     city: string;
 
     @Column()
@@ -28,6 +31,10 @@ class Address {
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
+        }
+
+        if (!this.number) {
+            this.number = 0;
         }
     }
 }
