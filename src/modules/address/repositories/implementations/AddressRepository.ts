@@ -11,7 +11,7 @@ class AddressRepository implements IAddressRepository {
         this.repository = getRepository(Address);
     }
     
-    async create({ street, number, city, state, cep }: ICreateAddressDTO): Promise<void> {
+    async create({ street, number, city, state, cep }: ICreateAddressDTO): Promise<Address> {
         
         const address = this.repository.create({
             street, 
@@ -22,6 +22,15 @@ class AddressRepository implements IAddressRepository {
         });
 
         await this.repository.save(address);
+
+        return address;
+    }
+
+    async list(): Promise<Address[]> {
+
+        const adresses = await this.repository.find();
+
+        return adresses;
     }
 
 }
