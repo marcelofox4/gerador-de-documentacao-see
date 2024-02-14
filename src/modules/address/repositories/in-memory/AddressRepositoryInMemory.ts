@@ -47,9 +47,20 @@ class AddressRepositoryInMemory implements IAddressRepository {
             address.state = state ? state : address.state;
             address.cep = cep ? cep : address.cep;
             address.update_at = new Date();
-        }
 
-        return address;
+            return address;
+        }
+    }
+
+    async delete(id: string): Promise<Address> {
+
+        const address = this.adresses.find((address) => address.id == id);
+
+        if (address) {
+            const addressIndex = this.adresses.findIndex((address) => address.id == id);
+            this.adresses.splice(addressIndex, 1);
+            return address;
+        }
     }
     
 }

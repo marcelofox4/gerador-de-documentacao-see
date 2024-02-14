@@ -1,5 +1,5 @@
 import { ICreateAddressDTO } from "../../dtos/ICreateAddressDTO";
-import { IUpdateAddress } from "../../dtos/IUpdateAddressDTO";
+import { IUpdateAddressDTO } from "../../dtos/IUpdateAddressDTO";
 import { Address } from "../../entities/Address";
 
 interface IAddressRepository {
@@ -10,7 +10,9 @@ interface IAddressRepository {
 
     findById(id: string): Promise<Address>;
 
-    update(id: string, { street, number, city, state, cep }: IUpdateAddress): Promise<Address>;
+    update(id: string, { street, number, city, state, cep }: IUpdateAddressDTO): Promise<Address>;
+
+    delete(id: string): Promise<Address>;
 }
 
 export { IAddressRepository };
