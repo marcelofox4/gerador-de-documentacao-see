@@ -13,7 +13,7 @@ class UpdateAddressController {
         const updateAddressUseCase = container.resolve(UpdateAddressUseCase);
 
         try {
-            updateAddressUseCase.execute( id, {
+            await updateAddressUseCase.execute( id, {
                 street, 
                 number, 
                 city, 

@@ -36,8 +36,7 @@
                 "responses": {
                     "201": {
                         "description": "Address created!"
-                    },
-                    "400": {}
+                    }
                 }
             },
             "get": {
@@ -47,8 +46,46 @@
                 "responses": {
                     "200": {
                         "description": "Ok"
+                    }
+                }
+            }
+        },
+        "/address/{id}": {
+            "put": {
+                "tags": ["Address"],
+                "summary": "Update Address",
+                "description": "it should be possible to update a registered address.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "street": "Rua Teste Updated",
+                                "number": 999,
+                                "city": "Cidade Teste Updated",
+                                "state": "Estado Teste Updated",
+                                "cep": "55590000 Updated"
+                            }        
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
                     },
-                    "400": {}
+                    "400": {
+                        "description": "Address do not exists!"
+                    }
                 }
             }
         }
