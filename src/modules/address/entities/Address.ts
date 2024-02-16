@@ -10,7 +10,7 @@ class Address {
     @Column()
     street: string;
 
-    @Column()
+    @Column({ nullable: true })
     number?: number;
 
     @Column()
@@ -19,8 +19,8 @@ class Address {
     @Column()
     state: string;
 
-    @Column()
-    cep: string;
+    @Column({ nullable: true })
+    cep?: string;
 
     @CreateDateColumn()
     created_at: Date;
@@ -31,10 +31,6 @@ class Address {
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
-        }
-
-        if (!this.number) {
-            this.number = 0;
         }
     }
 }

@@ -3,7 +3,7 @@ interface ICreateAddressDTO {
     number?: number;
     city: string;
     state: string;
-    cep: string;
+    cep?: string;
 }
 
 export { ICreateAddressDTO };
