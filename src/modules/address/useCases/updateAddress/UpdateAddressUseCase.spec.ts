@@ -12,7 +12,7 @@ describe("Update Address", () => {
         updateAddressUseCase = new UpdateAddressUseCase(addressRepositoryInMemory);
     });
 
-    it("should be able to update a address", async () => {
+    it("should be able to update an address", async () => {
 
         await addressRepositoryInMemory.create({
             street: "Rua teste",
