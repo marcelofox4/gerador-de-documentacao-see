@@ -18,7 +18,8 @@ export class CreateTableAddress1707694852084 implements MigrationInterface {
                     },
                     {
                         name: "number",
-                        type: "numeric"
+                        type: "numeric",
+                        isNullable: true,
                     },
                     {
                         name: "city",
@@ -31,6 +32,7 @@ export class CreateTableAddress1707694852084 implements MigrationInterface {
                     {
                         name: "cep",
                         type: "varchar",
+                        isNullable: true,
                     },
                     {
                         name: "created_at",
