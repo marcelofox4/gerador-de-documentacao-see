@@ -7,7 +7,7 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
     athleteResponsibles: AthleteResponsible[] = [];
     
     async create({ name, cpf, rg, email, phoneNumber, profession, maritalStatus, addressId }: ICreateAthleteResponsibleDTO): Promise<AthleteResponsible> {
-        
+
         const athleteResponsible = new AthleteResponsible();
 
         Object.assign(athleteResponsible, {
@@ -22,6 +22,13 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
         });
 
         this.athleteResponsibles.push(athleteResponsible);
+
+        return athleteResponsible;
+    }
+
+    async findByCpf(cpf: string): Promise<AthleteResponsible> {
+
+        const athleteResponsible = this.athleteResponsibles.find((athleteResponsible) => athleteResponsible.cpf == cpf);
 
         return athleteResponsible;
     }
