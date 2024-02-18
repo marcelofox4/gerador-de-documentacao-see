@@ -8,13 +8,9 @@ class ListAddressesController {
 
         const listAdressesUseCase = container.resolve(ListAddressesUseCase);
 
-        try {
-            const adresses = await listAdressesUseCase.execute();
+        const adresses = await listAdressesUseCase.execute();
             
-            return response.status(200).json(adresses);
-        } catch (error) {
-            return response.status(400).json(error);
-        }
+        return response.status(200).json(adresses);
     }
 }
 

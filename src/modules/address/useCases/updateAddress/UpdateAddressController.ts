@@ -12,19 +12,15 @@ class UpdateAddressController {
 
         const updateAddressUseCase = container.resolve(UpdateAddressUseCase);
 
-        try {
-            await updateAddressUseCase.execute( id, {
-                street, 
-                number, 
-                city, 
-                state, 
-                cep
-            })
+        await updateAddressUseCase.execute( id, {
+            street, 
+            number, 
+            city, 
+            state, 
+            cep
+        });
 
-            return response.status(200).json({ message: "Updated address!" })
-        } catch (error) {
-            return response.status(400).json(error);
-        }
+        return response.status(200).json({ message: "Updated address!" });
     }
 }
 

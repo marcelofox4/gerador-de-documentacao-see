@@ -9,20 +9,15 @@ class CreateAddressController {
         const { street, number, city, state, cep } = request.body;
 
         const createAddressUseCase = container.resolve(CreateAddressUseCase);
+        await createAddressUseCase.execute({
+            street, 
+            number, 
+            city, 
+            state, 
+            cep
+        });
 
-        try {
-            await createAddressUseCase.execute({
-                street, 
-                number, 
-                city, 
-                state, 
-                cep
-            });
-
-            return response.status(201).json({ message: "Address created!" });
-        } catch (error) {
-            return response.status(400).json(error);
-        }
+        return response.status(201).json({ message: "Address created!" });
     }
 }
 
