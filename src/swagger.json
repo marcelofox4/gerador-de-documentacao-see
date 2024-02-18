@@ -87,6 +87,30 @@
                         "description": "Address do not exists!"
                     }
                 }
+            },
+            "delete": {
+                "tags": ["Address"],
+                "summary": "Delete Address",
+                "description": "it should be possible to delete an address.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted address!"
+                    },
+                    "400": {
+                        "description": "Address do not exists!"
+                    }
+                }
             }
         }
     },

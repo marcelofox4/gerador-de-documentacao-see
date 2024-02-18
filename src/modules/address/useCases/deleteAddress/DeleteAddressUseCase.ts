@@ -1,10 +1,13 @@
+import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
 import { Address } from "../../entities/Address";
 import { IAddressRepository } from "../../repositories/interfaces/IAddressRepository";
 
+@injectable()
 class DeleteAddressUseCase {
 
     constructor(
+        @inject("AddressRepository")
         private addressRepository: IAddressRepository
     ) {}
 
