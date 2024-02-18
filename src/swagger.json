@@ -51,10 +51,41 @@
             }
         },
         "/address/{id}": {
+            "get": {
+                "tags": ["Address"],
+                "summary": "Find Address by ID",
+                "description": "It should be able to find an address by ID",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Address"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Address do not exists!"
+                    }
+                }
+            },
             "put": {
                 "tags": ["Address"],
                 "summary": "Update Address",
-                "description": "it should be possible to update a registered address.",
+                "description": "It should be possible to update a registered address.",
                 "parameters": [
                     {
                         "name": "id",
@@ -81,7 +112,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Ok"
+                        "description": "Updated Address!"
                     },
                     "400": {
                         "description": "Address do not exists!"
@@ -91,7 +122,7 @@
             "delete": {
                 "tags": ["Address"],
                 "summary": "Delete Address",
-                "description": "it should be possible to delete an address.",
+                "description": "It should be possible to delete an address.",
                 "parameters": [
                     {
                         "name": "id",
