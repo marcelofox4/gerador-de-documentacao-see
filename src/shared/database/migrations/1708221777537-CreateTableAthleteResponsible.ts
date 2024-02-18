@@ -27,7 +27,7 @@ export class CreateTableAthleteResponsible1708221777537 implements MigrationInte
                     {
                         name: "email",
                         type: "varchar",
-                        isNullable: true
+                        isNullable: true,
                     },
                     {
                         name: "phoneNumber",
@@ -44,6 +44,7 @@ export class CreateTableAthleteResponsible1708221777537 implements MigrationInte
                     {
                         name: "addressId",
                         type: "uuid",
+                        isNullable: true,
                     },
                     {
                         name: "created_at",

@@ -30,7 +30,7 @@ class AthleteResponsible {
     maritalStatus: string;
 
     @Column()
-    addressId: string;
+    addressId?: string;
 
     @OneToOne(() => Address)
     @JoinColumn({ name: "addressId" })
@@ -40,7 +40,7 @@ class AthleteResponsible {
     created_at: Date;
 
     @CreateDateColumn()
-    updated_at: Date;
+    update_at: Date;
 
     constructor() {
         if (!this.id) {

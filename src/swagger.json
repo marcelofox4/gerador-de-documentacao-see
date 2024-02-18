@@ -143,7 +143,44 @@
                     }
                 }
             }
-        }
+        },
+        "/athleteResponsible/": {
+            "post": {
+                "tags": ["Athlete Responsible"],
+                "summary": "Create Athlete Responsible",
+                "description": "It should be possible to register an Athlete Responsible.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "name": "Nome do Responsável",
+                                "cpf": "11122233344", 
+                                "rg": "1222333-SDS", 
+                                "email": "responsavel@email.com", 
+                                "phoneNumber": "81977774444", 
+                                "profession": "Profissão do Responsável", 
+                                "maritalStatus": "Estado civil do Responsável",
+                                "addressId": "af3e90d3-6ae2-4a79-b402-bc207861dc97"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Athlete Responsible already exists!"
+                    }
+                }
+            }
+        }    
     },
     "components": {
         "schemas": {
@@ -169,10 +206,48 @@
                         "type": "string"
                     },
                     "created_at": {
-                        "type": "Date"
+                        "type": "datetime"
                     },
-                    "updated_at": {
-                        "type": "Date"
+                    "update_at": {
+                        "type": "datetime"
+                    }
+                }
+            },
+            "AthleteResponsible": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "cpf": {
+                        "type": "number"
+                    },
+                    "rg": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "profession": {
+                        "type": "string"
+                    },
+                    "maritalStatus": {
+                        "type": "string"
+                    },
+                    "addressId": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "datetime"
+                    },
+                    "update_at": {
+                        "type": "datetime"
                     }
                 }
             }
