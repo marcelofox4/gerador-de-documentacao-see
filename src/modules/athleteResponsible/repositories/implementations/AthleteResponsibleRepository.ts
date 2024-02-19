@@ -60,6 +60,18 @@ class AthleteResponsibleRepository implements IAthleteResponsibleRepository {
         return athleteResponsible;
     }
 
+    async delete(cpf: string): Promise<AthleteResponsible> {
+        
+        const athleteResponsible = await this.repository.findOne({ where: { cpf } });
+
+        if (athleteResponsible) {
+
+            await this.repository.remove(athleteResponsible);
+            
+            return athleteResponsible;
+        }
+    }
+
 }
 
 export { AthleteResponsibleRepository };

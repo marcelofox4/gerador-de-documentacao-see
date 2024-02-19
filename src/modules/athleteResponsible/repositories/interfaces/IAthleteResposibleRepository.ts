@@ -12,6 +12,8 @@ interface IAthleteResponsibleRepository {
     list(): Promise<AthleteResponsible[]>;
 
     update(cpf: string, { email, phoneNumber, profession, maritalStatus, addressId }: IUpdateAthleteResponsibleDTO): Promise<AthleteResponsible>;
+
+    delete(cpf: string): Promise<AthleteResponsible>;
 }
 
 export { IAthleteResponsibleRepository };

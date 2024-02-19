@@ -55,6 +55,20 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
         }
     }
 
+    async delete(cpf: string): Promise<AthleteResponsible> {
+        
+        const athleteResponsible = this.athletesResponsible.find((athleteResponsible) => athleteResponsible.cpf == cpf);
+
+        if (athleteResponsible) {
+            
+            const athleteResponsibleIndex = this.athletesResponsible.findIndex((athleteResponsible) => athleteResponsible.cpf == cpf);
+
+            this.athletesResponsible.splice(athleteResponsibleIndex, 1);
+
+            return athleteResponsible;
+        }
+    }
+
 }
 
 export { AthleteResponsibleRepositoryInMemory };
