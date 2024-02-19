@@ -220,6 +220,49 @@
                         "description": "Athlete responsible does not exists!"
                     }
                 }
+            },
+            "put": {
+                "tags": ["Athlete Responsible"],
+                "summary": "Update Athlete Responsible",
+                "description": "It should be possible to update a registered athlete responsible.",
+                "parameters": [
+                    {
+                        "name": "cpf",
+                        "in": "path",
+                        "description": "Athlete Responsible CPF",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "email": "responsavelUPDATED@email.com", 
+                                "phoneNumber": "81999991111", 
+                                "profession": "Profissão do Responsável UPDATED", 
+                                "maritalStatus": "Estado civil do Responsável UPDATED",
+                                "addressId": "af3e90d3-6ae2-4a79-b402-bc207861dc00"
+                            }        
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Athlete responsible does not exists!"
+                    }
+                }
             }
         }
     },

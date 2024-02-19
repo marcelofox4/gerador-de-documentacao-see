@@ -1,11 +1,14 @@
+import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
 import { IUpdateAthleteResponsibleDTO } from "../../dtos/IUpdateAthleteResponsibleDTO";
 import { AthleteResponsible } from "../../entities/AthleteResponsible";
 import { IAthleteResponsibleRepository } from "../../repositories/interfaces/IAthleteResposibleRepository";
 
+@injectable()
 class UpdateAthleteResponsibleUseCase {
 
     constructor(
+        @inject("AthleteResponsibleRepository")
         private athleteResponsibleRepository: IAthleteResponsibleRepository
     ) {}
 
