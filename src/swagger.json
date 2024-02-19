@@ -189,7 +189,39 @@
                     }
                 }
             }
-        } 
+        },
+        "/athleteResponsible/{cpf}": {
+            "get": {
+                "tags": ["Athlete Responsible"],
+                "summary": "Find Athlete Responsible by CPF",
+                "description": "It should be able to find an athlete responsible by CPF",
+                "parameters": [
+                    {
+                        "name": "cpf",
+                        "in": "path",
+                        "description": "Athlete Responsible CPF",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Athlete responsible does not exists!"
+                    }
+                }
+            }
+        }
     },
     "components": {
         "schemas": {
