@@ -1,10 +1,9 @@
 import { Router } from "express";
-
-import { CreateAddressController } from "../../modules/address/useCases/createAddress/CreateAddressController";
-import { ListAddressesController } from "../../modules/address/useCases/listAddresses/ListAddressesController";
-import { UpdateAddressController } from "../../modules/address/useCases/updateAddress/UpdateAddressController";
-import { DeleteAddressController } from "../../modules/address/useCases/deleteAddress/DeleteAddressController";
-import { FindAddressByIdController } from "../../modules/address/useCases/findAddressById/FindAddressByIdController";
+import { CreateAddressController } from "../../modules/athletes/useCases/createAddress/CreateAddressController";
+import { ListAddressesController } from "../../modules/athletes/useCases/listAddresses/ListAddressesController";
+import { FindAddressByIdController } from "../../modules/athletes/useCases/findAddressById/FindAddressByIdController";
+import { UpdateAddressController } from "../../modules/athletes/useCases/updateAddress/UpdateAddressController";
+import { DeleteAddressController } from "../../modules/athletes/useCases/deleteAddress/DeleteAddressController";
 
 const addressRoutes = Router();
 

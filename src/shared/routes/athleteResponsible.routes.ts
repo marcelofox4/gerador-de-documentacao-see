@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { CreateAthleteResponsibleController } from "../../modules/athleteResponsible/useCases/createAthleteResponsible/CreateAthleteResponsibleController";
-import { ListAthleteResponsibleController } from "../../modules/athleteResponsible/useCases/listAthletesResponsible/ListAthleteResponsibleController";
-import { FindAthleteResponsibleByCpfController } from "../../modules/athleteResponsible/useCases/findAthleteResponsibleByCpf/FindAthleteResponsibleByCpfController";
-import { UpdateAthleteResponsibleController } from "../../modules/athleteResponsible/useCases/updateAthleteResponsible/UpdateAthleteResponsibleController";
-import { DeleteAthleteResponsibleController } from "../../modules/athleteResponsible/useCases/deleteAthleteResponsible/DeleteAthleteResponsibleController";
+import { CreateAthleteResponsibleController } from "../../modules/athletes/useCases/createAthleteResponsible/CreateAthleteResponsibleController";
+import { ListAthleteResponsibleController } from "../../modules/athletes/useCases/listAthletesResponsible/ListAthleteResponsibleController";
+import { FindAthleteResponsibleByCpfController } from "../../modules/athletes/useCases/findAthleteResponsibleByCpf/FindAthleteResponsibleByCpfController";
+import { UpdateAthleteResponsibleController } from "../../modules/athletes/useCases/updateAthleteResponsible/UpdateAthleteResponsibleController";
+import { DeleteAthleteResponsibleController } from "../../modules/athletes/useCases/deleteAthleteResponsible/DeleteAthleteResponsibleController";
 
 const athleteResponsibleRoutes = Router();
 
