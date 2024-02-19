@@ -55,7 +55,6 @@
                 "tags": ["Address"],
                 "summary": "Find Address by ID",
                 "description": "It should be able to find an address by ID",
-                "security": [{ "bearerAuth": [] }],
                 "parameters": [
                     {
                         "name": "id",
