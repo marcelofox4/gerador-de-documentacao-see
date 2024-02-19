@@ -178,8 +178,18 @@
                         "description": "Athlete Responsible already exists!"
                     }
                 }
+            },
+            "get": {
+                "tags": ["Athlete Responsible"],
+                "summary": "List Athletes Responsible",
+                "description": "It should be possible to list all registered athlete responsible.",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
             }
-        }    
+        } 
     },
     "components": {
         "schemas": {
