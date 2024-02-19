@@ -1,9 +1,10 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 import { Address } from "./Address";
+import { AthleteResponsible } from "./AthleteResponsible";
 
 @Entity("athlete")
-class AthleteResponsible {
+class Athlete {
 
     @PrimaryColumn()
     id?: string;
@@ -56,4 +57,4 @@ class AthleteResponsible {
     }
 }
 
-export { AthleteResponsible };
+export { Athlete };
