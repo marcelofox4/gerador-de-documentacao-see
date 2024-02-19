@@ -263,6 +263,36 @@
                         "description": "Athlete responsible does not exists!"
                     }
                 }
+            },
+            "delete": {
+                "tags": ["Athlete Responsible"],
+                "summary": "Delete Athlete Responsible",
+                "description": "It should be able to delete an athlete responsible by CPF",
+                "parameters": [
+                    {
+                        "name": "cpf",
+                        "in": "path",
+                        "description": "Athlete Responsible CPF",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Athlete responsible does not exists!"
+                    }
+                }
             }
         }
     },
