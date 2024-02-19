@@ -6,6 +6,9 @@ import { AddressRepository } from "../../modules/athletes/repositories/implement
 import { IAthleteResponsibleRepository } from "../../modules/athletes/repositories/interfaces/IAthleteResposibleRepository";
 import { AthleteResponsibleRepository } from "../../modules/athletes/repositories/implementations/AthleteResponsibleRepository";
 
+import { IAthleteRepository } from "../../modules/athletes/repositories/interfaces/IAthleteRepository";
+import { AthleteRepository } from "../../modules/athletes/repositories/implementations/AthleteRepository";
+
 
 container.registerSingleton<IAddressRepository>(
     "AddressRepository",
@@ -15,4 +18,9 @@ container.registerSingleton<IAddressRepository>(
 container.registerSingleton<IAthleteResponsibleRepository>(
     "AthleteResponsibleRepository",
     AthleteResponsibleRepository,
+);
+
+container.registerSingleton<IAthleteRepository>(
+    "AthleteRepository",
+    AthleteRepository,
 );
