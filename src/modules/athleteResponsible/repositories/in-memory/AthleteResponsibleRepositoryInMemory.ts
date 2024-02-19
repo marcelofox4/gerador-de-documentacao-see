@@ -33,6 +33,11 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
         return athleteResponsible;
     }
 
+    async list(): Promise<AthleteResponsible[]> {
+        
+        return this.athleteResponsibles;
+    }
+
 }
 
 export { AthleteResponsibleRepositoryInMemory };

@@ -30,7 +30,15 @@ class AthleteResponsibleRepository implements IAthleteResponsibleRepository {
     }
 
     async findByCpf(cpf: string): Promise<AthleteResponsible> {
+        
         return await this.repository.findOne({ where: { cpf } });
+    }
+
+    async list(): Promise<AthleteResponsible[]> {
+        
+        const athleteResponsibles = await this.repository.find();
+
+        return athleteResponsibles;
     }
 
 }
