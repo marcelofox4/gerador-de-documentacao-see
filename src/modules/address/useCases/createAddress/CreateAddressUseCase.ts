@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { ICreateAddressDTO } from "../../../athletes/dtos/ICreateAddressDTO";
-import { IAddressRepository } from "../../../athletes/repositories/interfaces/IAddressRepository";
+import { ICreateAddressDTO } from "../../../address/dtos/ICreateAddressDTO";
+import { IAddressRepository } from "../../../address/repositories/interfaces/IAddressRepository";
 
 @injectable()
 class CreateAddressUseCase {

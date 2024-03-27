@@ -10,6 +10,7 @@
         "migrationsDir": "./src/shared/database/migrations"
     },
     "entities": [
+        "./src/modules/address/entities/**/*{.ts,.js}",
         "./src/modules/athletes/entities/**/*{.ts,.js}"
     ]
 }

@@ -1,4 +1,4 @@
-import { AddressRepositoryInMemory } from "../../../athletes/repositories/in-memory/AddressRepositoryInMemory";
+import { AddressRepositoryInMemory } from "../../../address/repositories/in-memory/AddressRepositoryInMemory";
 import { CreateAddressUseCase } from "./CreateAddressUseCase"
 
 let addressRepositoryInMemory: AddressRepositoryInMemory;

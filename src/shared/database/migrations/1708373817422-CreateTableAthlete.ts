@@ -25,6 +25,14 @@ export class CreateTableAthlete1708373817422 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "bornDate",
+                        type: "date",
+                    },
+                    {
+                        name: "gender",
+                        type: "varchar"
+                    },
+                    {
                         name: "email",
                         type: "varchar",
                         isNullable: true,
@@ -43,6 +51,10 @@ export class CreateTableAthlete1708373817422 implements MigrationInterface {
                         name: "maritalStatus",
                         type: "varchar",
                         isNullable: true,
+                    },
+                    {
+                        name: "status",
+                        type: "boolean",
                     },
                     {
                         name: "addressId",
@@ -106,5 +118,4 @@ export class CreateTableAthlete1708373817422 implements MigrationInterface {
 
         await queryRunner.dropTable("athlete");
     }
-
 }

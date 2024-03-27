@@ -1,10 +1,10 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
-import { Address } from "../../entities/Address";
-import { IAddressRepository } from "../../../athletes/repositories/interfaces/IAddressRepository";
+import { Address } from "../../../address/entities/Address";
+import { IAddressRepository } from "../../../address/repositories/interfaces/IAddressRepository";
 
 @injectable()
-class DeleteAddressUseCase {
+class FindAddressByIdUseCase {
 
     constructor(
         @inject("AddressRepository")
@@ -17,13 +17,11 @@ class DeleteAddressUseCase {
 
         if (!addressAlreadyExists) {
             throw new AppError("Address do not exists!");
+            
         }
 
-        const address = await this.addressRepository.delete(id);
-
-        return address;
+        return addressAlreadyExists;
     }
-
 }
 
-export { DeleteAddressUseCase };
+export { FindAddressByIdUseCase };

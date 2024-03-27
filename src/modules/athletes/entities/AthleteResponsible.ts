@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
-import { Address } from "./Address";
+import { Address } from "../../address/entities/Address";
 
 @Entity("athleteResponsible")
 class AthleteResponsible {
@@ -17,6 +17,9 @@ class AthleteResponsible {
     @Column()
     rg: string;
 
+    @Column()
+    gender: string;
+
     @Column({ nullable: true })
     email?: string;
 
@@ -28,6 +31,9 @@ class AthleteResponsible {
 
     @Column()
     maritalStatus: string;
+
+    @Column()
+    status: boolean;
 
     @Column()
     addressId?: string;

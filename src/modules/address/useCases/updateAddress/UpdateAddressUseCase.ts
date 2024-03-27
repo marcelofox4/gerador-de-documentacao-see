@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { IAddressRepository } from "../../../athletes/repositories/interfaces/IAddressRepository";
-import { IUpdateAddressDTO } from "../../../athletes/dtos/IUpdateAddressDTO";
+import { IAddressRepository } from "../../repositories/interfaces/IAddressRepository";
+import { IUpdateAddressDTO } from "../../dtos/IUpdateAddressDTO";
 import { AppError } from "../../../../shared/errors/AppError";
 import { Address } from "../../entities/Address";
 

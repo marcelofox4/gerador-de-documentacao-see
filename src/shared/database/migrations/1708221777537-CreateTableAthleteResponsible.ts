@@ -25,6 +25,10 @@ export class CreateTableAthleteResponsible1708221777537 implements MigrationInte
                         type: "varchar",
                     },
                     {
+                        name: "gender",
+                        type: "varchar",
+                    },
+                    {
                         name: "email",
                         type: "varchar",
                         isNullable: true,
@@ -40,6 +44,10 @@ export class CreateTableAthleteResponsible1708221777537 implements MigrationInte
                     {
                         name: "maritalStatus",
                         type: "varchar",
+                    },
+                    {
+                        name: "status",
+                        type: "boolean",
                     },
                     {
                         name: "addressId",
@@ -81,5 +89,4 @@ export class CreateTableAthleteResponsible1708221777537 implements MigrationInte
 
         await queryRunner.dropTable("athleteResponsible");
     }
-
 }

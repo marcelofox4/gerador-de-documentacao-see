@@ -1,5 +1,5 @@
 import { inject, injectable } from "tsyringe";
-import { IAddressRepository } from "../../../athletes/repositories/interfaces/IAddressRepository";
+import { IAddressRepository } from "../../repositories/interfaces/IAddressRepository";
 import { Address } from "../../entities/Address";
 
 @injectable()

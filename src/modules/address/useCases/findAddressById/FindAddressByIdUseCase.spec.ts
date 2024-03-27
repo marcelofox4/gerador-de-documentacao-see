@@ -1,5 +1,5 @@
 import { AppError } from "../../../../shared/errors/AppError";
-import { AddressRepositoryInMemory } from "../../../athletes/repositories/in-memory/AddressRepositoryInMemory";
+import { AddressRepositoryInMemory } from "../../../address/repositories/in-memory/AddressRepositoryInMemory";
 import { FindAddressByIdUseCase } from "./FindAddressByIdUseCase";
 
 let addressRepositoryInMemory: AddressRepositoryInMemory;

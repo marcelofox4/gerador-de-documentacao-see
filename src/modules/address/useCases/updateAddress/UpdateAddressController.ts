@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUpdateAddressDTO } from "../../../athletes/dtos/IUpdateAddressDTO";
+import { IUpdateAddressDTO } from "../../dtos/IUpdateAddressDTO";
 import { container } from "tsyringe";
 import { UpdateAddressUseCase } from "./UpdateAddressUseCase";
 
