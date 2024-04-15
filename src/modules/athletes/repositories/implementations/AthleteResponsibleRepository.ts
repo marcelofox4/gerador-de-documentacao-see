@@ -44,7 +44,7 @@ class AthleteResponsibleRepository implements IAthleteResponsibleRepository {
         return athleteResponsibles;
     }
 
-    async update(cpf: string, { email, phoneNumber, profession, maritalStatus, addressId }: IUpdateAthleteResponsibleDTO): Promise<AthleteResponsible> {
+    async update(cpf: string, { email, phoneNumber, profession, maritalStatus }: IUpdateAthleteResponsibleDTO): Promise<AthleteResponsible> {
         
         const athleteResponsible = await this.repository.findOne({ where: { cpf } });
 
@@ -53,7 +53,6 @@ class AthleteResponsibleRepository implements IAthleteResponsibleRepository {
             athleteResponsible.phoneNumber = phoneNumber ? phoneNumber : athleteResponsible.phoneNumber;
             athleteResponsible.profession = profession ? profession : athleteResponsible.profession;
             athleteResponsible.maritalStatus = maritalStatus ? maritalStatus : athleteResponsible.maritalStatus;
-            athleteResponsible.addressId = addressId ? addressId : athleteResponsible.addressId;
             athleteResponsible.update_at = new Date();
 
             await this.repository.save(athleteResponsible);

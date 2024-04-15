@@ -41,7 +41,7 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
         return this.athletesResponsible;
     }
 
-    async update(cpf: string, { email, phoneNumber, profession, maritalStatus, addressId }: IUpdateAthleteResponsibleDTO): Promise<AthleteResponsible> {
+    async update(cpf: string, { email, phoneNumber, profession, maritalStatus }: IUpdateAthleteResponsibleDTO): Promise<AthleteResponsible> {
         
         const athleteResponsible = this.athletesResponsible.find((athleteResponsible) => athleteResponsible.cpf == cpf);
 
@@ -50,7 +50,6 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
             athleteResponsible.phoneNumber = phoneNumber ? phoneNumber : athleteResponsible.phoneNumber;
             athleteResponsible.profession = profession ? profession : athleteResponsible.profession;
             athleteResponsible.maritalStatus = maritalStatus ? maritalStatus : athleteResponsible.maritalStatus;
-            athleteResponsible.addressId = addressId ? addressId : athleteResponsible.addressId;
             athleteResponsible.update_at = new Date();
 
             return athleteResponsible;

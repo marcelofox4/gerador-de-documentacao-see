@@ -4,7 +4,6 @@ interface IUpdateAthleteResponsibleDTO {
     phoneNumber?: string;
     profession?: string;
     maritalStatus?: string;
-    addressId?: string;
 }
 
 export { IUpdateAthleteResponsibleDTO };

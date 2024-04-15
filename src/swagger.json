@@ -159,8 +159,12 @@
                                 "phoneNumber": "81999991111", 
                                 "profession": "Profissão do Responsável UPDATED", 
                                 "maritalStatus": "Estado civil do Responsável UPDATED",
-                                "addressId": "af3e90d3-6ae2-4a79-b402-bc207861dc00"
-                            }        
+                                "street": "Rua Ipojuca UPDATED", 
+                                "number": 200, 
+                                "city": "Ipojuca UPDATED", 
+                                "state": "PE UPDATED", 
+                                "cep": "55590000 UPDATED"
+                            } 
                         }
                     }
                 },

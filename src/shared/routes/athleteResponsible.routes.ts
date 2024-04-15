@@ -2,7 +2,7 @@ import { Router } from "express";
 import { CreateAthleteResponsibleController } from "../../modules/athletes/controllers/CreateAthleteResponsibleController";
 import { ListAthleteResponsibleController } from "../../modules/athletes/useCases/listAthletesResponsible/ListAthleteResponsibleController";
 import { FindAthleteResponsibleByCpfController } from "../../modules/athletes/useCases/findAthleteResponsibleByCpf/FindAthleteResponsibleByCpfController";
-import { UpdateAthleteResponsibleController } from "../../modules/athletes/useCases/updateAthleteResponsible/UpdateAthleteResponsibleController";
+import { UpdateAthleteResponsibleController } from "../../modules/athletes/controllers/UpdateAthleteResponsibleController";
 import { DeleteAthleteResponsibleController } from "../../modules/athletes/useCases/deleteAthleteResponsible/DeleteAthleteResponsibleController";
 
 const athleteResponsibleRoutes = Router();

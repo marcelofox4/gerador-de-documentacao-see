@@ -29,7 +29,7 @@ class CreateAthleteResponsibleUseCase {
         private addressRepository: IAddressRepository,
     ) {}
 
-    async execute({ name, cpf, rg, gender, email, phoneNumber, profession, maritalStatus, street, number, city, state, cep}: IRequest): Promise<Object> {
+    async execute({ name, cpf, rg, gender, email, phoneNumber, profession, maritalStatus, street, number, city, state, cep }: IRequest): Promise<Object> {
 
         const athleteResponsibleAlreadyExists = await this.athleteResponsibleRepository.findByCpf(cpf);
 
