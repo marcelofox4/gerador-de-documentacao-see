@@ -16,7 +16,8 @@ describe("List all Athletes Responsible", () => {
         const athleteResponsible = await athleteResponsibleRepositoryInMemory.create({
             name: "Nome do Responsável",
             cpf: "11122233344", 
-            rg: "1222333-SDS", 
+            rg: "1222333-SDS",
+            gender: "Masculino",
             email: "responsavel@email.com", 
             phoneNumber: "81977774444", 
             profession: "Profissão do Responsável", 
