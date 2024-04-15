@@ -16,29 +16,6 @@
     ],
     "paths":{
         "/address/": {
-            "post": {
-                "tags": ["Address"],
-                "summary": "Create Address",
-                "description": "It should be possible to register an Address.",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "example": {
-                                "street": "Rua de teste",
-                                "number": 100,
-                                "city": "Cidade de teste",
-                                "state": "Pernambuco",
-                                "cep": "55590000"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Address created!"
-                    }
-                }
-            },
             "get": {
                 "tags": ["Address"],
                 "summary": "List Addresses",
@@ -80,67 +57,6 @@
                         "description": "Address do not exists!"
                     }
                 }
-            },
-            "put": {
-                "tags": ["Address"],
-                "summary": "Update Address",
-                "description": "It should be possible to update a registered address.",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Address ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "example": {
-                                "street": "Rua Teste Updated",
-                                "number": 999,
-                                "city": "Cidade Teste Updated",
-                                "state": "Estado Teste Updated",
-                                "cep": "55590000 Updated"
-                            }        
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Updated Address!"
-                    },
-                    "400": {
-                        "description": "Address do not exists!"
-                    }
-                }
-            },
-            "delete": {
-                "tags": ["Address"],
-                "summary": "Delete Address",
-                "description": "It should be possible to delete an address.",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Address ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Deleted address!"
-                    },
-                    "400": {
-                        "description": "Address do not exists!"
-                    }
-                }
             }
         },
         "/athleteResponsible/": {
@@ -152,27 +68,26 @@
                     "content": {
                         "application/json": {
                             "example": {
-                                "name": "Nome do Responsável",
+                                "name": "Marcelo Sodré Raposo",
                                 "cpf": "11122233344", 
-                                "rg": "1222333-SDS", 
-                                "email": "responsavel@email.com", 
+                                "rg": "1222333-SDS",
+                                "gender": "Masculino",
+                                "email": "marcelo@email.com", 
                                 "phoneNumber": "81977774444", 
-                                "profession": "Profissão do Responsável", 
-                                "maritalStatus": "Estado civil do Responsável",
-                                "addressId": "af3e90d3-6ae2-4a79-b402-bc207861dc97"
+                                "profession": "Servidor público", 
+                                "maritalStatus": "Casado",
+                                "street": "Rua Ipojuca", 
+                                "number": 50, 
+                                "city": "Ipojuca", 
+                                "state": "PE", 
+                                "cep": "55590000"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AthleteResponsible"
-                                }
-                            }
-                        }
+                        "description": "Athlete Responsible created!"
                     },
                     "400": {
                         "description": "Athlete Responsible already exists!"
@@ -297,74 +212,6 @@
         }
     },
     "components": {
-        "schemas": {
-            "Address": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "street": {
-                        "type": "string"
-                    },
-                    "number": {
-                        "type": "number"
-                    },
-                    "city": {
-                        "type": "string"
-                    },
-                    "state": {
-                        "type": "string"
-                    },
-                    "cep": {
-                        "type": "string"
-                    },
-                    "created_at": {
-                        "type": "datetime"
-                    },
-                    "update_at": {
-                        "type": "datetime"
-                    }
-                }
-            },
-            "AthleteResponsible": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "cpf": {
-                        "type": "number"
-                    },
-                    "rg": {
-                        "type": "string"
-                    },
-                    "email": {
-                        "type": "string"
-                    },
-                    "phoneNumber": {
-                        "type": "string"
-                    },
-                    "profession": {
-                        "type": "string"
-                    },
-                    "maritalStatus": {
-                        "type": "string"
-                    },
-                    "addressId": {
-                        "type": "string"
-                    },
-                    "created_at": {
-                        "type": "datetime"
-                    },
-                    "update_at": {
-                        "type": "datetime"
-                    }
-                }
-            }
-        }
+        
     }
 }

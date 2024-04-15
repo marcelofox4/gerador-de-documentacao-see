@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CreateAthleteResponsibleController } from "../../modules/athletes/useCases/createAthleteResponsible/CreateAthleteResponsibleController";
+import { CreateAthleteResponsibleController } from "../../modules/athletes/controllers/CreateAthleteResponsibleController";
 import { ListAthleteResponsibleController } from "../../modules/athletes/useCases/listAthletesResponsible/ListAthleteResponsibleController";
 import { FindAthleteResponsibleByCpfController } from "../../modules/athletes/useCases/findAthleteResponsibleByCpf/FindAthleteResponsibleByCpfController";
 import { UpdateAthleteResponsibleController } from "../../modules/athletes/useCases/updateAthleteResponsible/UpdateAthleteResponsibleController";

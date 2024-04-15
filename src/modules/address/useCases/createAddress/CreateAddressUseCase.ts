@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { ICreateAddressDTO } from "../../../address/dtos/ICreateAddressDTO";
 import { IAddressRepository } from "../../../address/repositories/interfaces/IAddressRepository";
+import { Address } from "../../entities/Address";
 
 @injectable()
 class CreateAddressUseCase {
@@ -10,15 +11,17 @@ class CreateAddressUseCase {
         private addressRepository: IAddressRepository
     ) {}
 
-    async execute({ street, number, city, state, cep }: ICreateAddressDTO): Promise<void> {
+    async execute({ street, number, city, state, cep }: ICreateAddressDTO): Promise<Address> {
 
-        await this.addressRepository.create({
+        const addressCreated = await this.addressRepository.create({
             street, 
             number, 
             city, 
             state, 
             cep
         });
+
+        return addressCreated;
     }
 }
 
