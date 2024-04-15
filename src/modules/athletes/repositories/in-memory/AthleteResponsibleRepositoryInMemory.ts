@@ -7,7 +7,7 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
     
     athletesResponsible: AthleteResponsible[] = [];
     
-    async create({ name, cpf, rg, email, phoneNumber, profession, maritalStatus, addressId }: ICreateAthleteResponsibleDTO): Promise<AthleteResponsible> {
+    async create({ name, cpf, rg, gender, email, phoneNumber, profession, maritalStatus, addressId }: ICreateAthleteResponsibleDTO): Promise<AthleteResponsible> {
 
         const athleteResponsible = new AthleteResponsible();
 
@@ -15,10 +15,12 @@ class AthleteResponsibleRepositoryInMemory implements IAthleteResponsibleReposit
             name,
             cpf,
             rg,
+            gender,
             email,
             phoneNumber,
             profession,
             maritalStatus,
+            status: true,
             addressId,
         });
 
