@@ -17,8 +17,9 @@ describe("Delete Athlete Responsible", () => {
         const athleteResponsibleCreated = await athleteResponsibleRepositoryInMemory.create({
             name: "Nome do Responsável",
             cpf: "11122233344", 
-            rg: "1222333-SDS", 
-            email: "responsavel@email.com", 
+            rg: "1222333-SDS",
+            gender: "Masculino",
+            email: "responsavel@email.com",
             phoneNumber: "81977774444", 
             profession: "Profissão do Responsável", 
             maritalStatus: "Estado civil do Responsável",
