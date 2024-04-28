@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { ListAthleteResponsibleUseCase } from "./ListAthleteResponsibleUseCase";
+import { ListAthleteResponsibleUseCase } from "../useCases/listAthletesResponsible/ListAthleteResponsibleUseCase";
 
 class ListAthleteResponsibleController {
 

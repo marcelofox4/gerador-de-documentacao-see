@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { FindAthleteResponsibleByCpfUseCase } from "./FindAthleteResponsibleByCpfUseCase";
+import { FindAthleteResponsibleByCpfUseCase } from "../useCases/findAthleteResponsibleByCpf/FindAthleteResponsibleByCpfUseCase";
 
 
 class FindAthleteResponsibleByCpfController {

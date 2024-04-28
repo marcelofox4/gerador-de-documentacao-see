@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { DeleteAthleteResponsibleUseCase } from "./DeleteAthleteResponsibleUseCase";
+import { DeleteAthleteResponsibleUseCase } from "../useCases/deleteAthleteResponsible/DeleteAthleteResponsibleUseCase";
 
 class DeleteAthleteResponsibleController {
 
