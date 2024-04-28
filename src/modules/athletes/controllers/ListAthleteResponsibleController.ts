@@ -15,11 +15,8 @@ class ListAthleteResponsibleController {
         
         const dataAthletesResponsible = [];
         for (let i = 0; i < allAthletesResponsible.length; i++) {
-
             for (let j = 0; j < allAddresses.length; j++) {
-
                 if (allAthletesResponsible[i].addressId === allAddresses[j].id) {
-
                     dataAthletesResponsible.push({
                         AthleteResponsible: allAthletesResponsible[i],
                         Address: allAddresses[j],

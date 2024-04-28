@@ -15,50 +15,6 @@
         }
     ],
     "paths":{
-        "/address/": {
-            "get": {
-                "tags": ["Address"],
-                "summary": "List Addresses",
-                "description": "It should be possible to list all registered addresses.",
-                "responses": {
-                    "200": {
-                        "description": "Ok"
-                    }
-                }
-            }
-        },
-        "/address/{id}": {
-            "get": {
-                "tags": ["Address"],
-                "summary": "Find Address by ID",
-                "description": "It should be able to find an address by ID",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Address ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Address"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Address do not exists!"
-                    }
-                }
-            }
-        },
         "/athleteResponsible/": {
             "post": {
                 "tags": ["Athlete Responsible"],
