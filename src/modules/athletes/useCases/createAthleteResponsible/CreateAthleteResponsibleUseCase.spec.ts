@@ -33,7 +33,11 @@ describe("Create Address", () => {
             cep: "Teste",
         });
 
-        expect(athleteResponsibleCreated).toHaveProperty("id");
+        const athleteResponsible = await athleteResponsibleRepositoryInMemory.findByCpf(athleteResponsibleCreated.cpf);
+
+        const address = await addressRepositoryInMemory.findById(athleteResponsible.addressId);
+
+        expect(athleteResponsible && address).toHaveProperty("id");
     });
 
     it("should not be able to create a new Athlete Responsible with exists cpf", () => {

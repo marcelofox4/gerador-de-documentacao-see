@@ -2,6 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
 import { IAthleteResponsibleRepository } from "../../../athletes/repositories/interfaces/IAthleteResposibleRepository";
 import { IAddressRepository } from "../../../address/repositories/interfaces/IAddressRepository";
+import { AthleteResponsible } from "../../entities/AthleteResponsible";
 
 interface IRequest {
     name: string; 
@@ -29,7 +30,7 @@ class CreateAthleteResponsibleUseCase {
         private addressRepository: IAddressRepository,
     ) {}
 
-    async execute({ name, cpf, rg, gender, email, phoneNumber, profession, maritalStatus, street, number, city, state, cep }: IRequest): Promise<Object> {
+    async execute({ name, cpf, rg, gender, email, phoneNumber, profession, maritalStatus, street, number, city, state, cep }: IRequest): Promise<AthleteResponsible> {
 
         const athleteResponsibleAlreadyExists = await this.athleteResponsibleRepository.findByCpf(cpf);
 
