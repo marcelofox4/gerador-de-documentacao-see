@@ -1,17 +1,19 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
-import { AthleteResponsible } from "../../entities/AthleteResponsible";
 import { IAthleteResponsibleRepository } from "../../../athletes/repositories/interfaces/IAthleteResposibleRepository";
+import { IAddressRepository } from "../../../address/repositories/interfaces/IAddressRepository";
 
 @injectable()
 class DeleteAthleteResponsibleUseCase {
 
     constructor(
         @inject("AthleteResponsibleRepository")
-        private athleteResponsibleRepository: IAthleteResponsibleRepository
+        private athleteResponsibleRepository: IAthleteResponsibleRepository,
+        @inject("AddressRepository")
+        private addressRepository: IAddressRepository
     ) {}
 
-    async execute(cpf: string): Promise<AthleteResponsible> {
+    async execute(cpf: string): Promise<Object[]> {
 
         const athleteResponsibleAlreadyExists = await this.athleteResponsibleRepository.findByCpf(cpf);
 
@@ -19,9 +21,13 @@ class DeleteAthleteResponsibleUseCase {
             throw new AppError("Athlete responsible does not exists!");          
         }
 
+        const addressDeleted = await this.addressRepository.delete(athleteResponsibleAlreadyExists.addressId);
+
         const athleteResponsibleDeleted = await this.athleteResponsibleRepository.delete(cpf);
 
-        return athleteResponsibleDeleted;
+        const array = [athleteResponsibleDeleted, addressDeleted];
+
+        return array;
     }
 }
 
