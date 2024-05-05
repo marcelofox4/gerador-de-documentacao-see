@@ -17,21 +17,8 @@ class FindAthleteResponsibleByCpfController {
         const address = await findAddressByIdUseCase.execute(athleteResponsible.addressId);
 
         const dataAthleteResponsible = {
-            name: athleteResponsible.name,
-            cpf: athleteResponsible.cpf,
-            rg: athleteResponsible.rg,
-            gender: athleteResponsible.gender,
-            email: athleteResponsible.email,
-            phoneNumber: athleteResponsible.phoneNumber,
-            profession: athleteResponsible.profession,
-            maritalStatus: athleteResponsible.maritalStatus,
-            address: {
-                street: address.street,
-                number: address.number,
-                city: address.city,
-                state: address.state,
-                cep: address.cep,
-            }
+            athleteResponsible: athleteResponsible,
+            address: address,
         };
 
         return response.status(200).json(dataAthleteResponsible);

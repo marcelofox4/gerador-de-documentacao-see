@@ -82,7 +82,16 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                    "type": "object",
+                                    "properties": {
+                                        "AthleteResponsible": {
+                                            "$ref": "#/components/schemas/AthleteResponsible"
+                                        },
+                                        "Address": {
+                                            "$ref": "#/components/schemas/Address"
+                                        }
+                                    }
+                                    
                                 }
                             }
                         }
@@ -159,7 +168,16 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AthleteResponsible"
+                                    "type": "object",
+                                    "properties": {
+                                        "AthleteResponsible": {
+                                            "$ref": "#/components/schemas/AthleteResponsible"
+                                        },
+                                        "Address": {
+                                            "$ref": "#/components/schemas/Address"
+                                        }
+                                    }
+                                    
                                 }
                             }
                         }
@@ -176,6 +194,9 @@
             "AthleteResponsible": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     },
@@ -200,25 +221,46 @@
                     "maritalStatus": {
                         "type": "string"
                     },
-                    "address": {
-                        "type": "object",
-                        "properties": {
-                            "street": {
-                                "type": "string"
-                            },
-                            "number": {
-                                "type": "integer"
-                            },
-                            "city": {
-                                "type": "string"
-                            },
-                            "state": {
-                                "type": "string"
-                            },
-                            "cep": {
-                                "type": "string"
-                            }
-                        }
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "addressId": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "datetime"
+                    },
+                    "update_at": {
+                        "type": "datetime"
+                    }
+                }
+            },
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "street": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "cep": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "datetime"
+                    },
+                    "update_at": {
+                        "type": "datetime"
                     }
                 }
             }
