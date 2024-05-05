@@ -11,12 +11,13 @@ class AthleteRepository implements IAthleteRepository {
         this.repository = getRepository(Athlete);
     }
     
-    async create({ name, cpf, rg, email, phoneNumber, profession, maritalStatus, addressId, athleteResponsibleId }: ICreateAthleteDTO): Promise<Athlete> {
+    async create({ name, cpf, rg, bornDate, email, phoneNumber, profession, maritalStatus, addressId, athleteResponsibleId }: ICreateAthleteDTO): Promise<Athlete> {
         
         const athleteResponsible = this.repository.create({
             name, 
             cpf, 
-            rg, 
+            rg,
+            bornDate,
             email, 
             phoneNumber, 
             profession, 

@@ -19,6 +19,9 @@ class Athlete {
     rg: string;
 
     @Column()
+    bornDate: Date;
+
+    @Column()
     gender: string;
 
     @Column({ nullable: true })
